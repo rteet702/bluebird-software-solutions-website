@@ -9,7 +9,7 @@ interface INavlinkProps extends PropsWithChildren {
 export default function Navlink({ href, children }: INavlinkProps) {
     return (
         <Link
-            className="px-4 h-full flex items-center bg-gradient-to-b from-white to-white hover:to-orange-500 via-white via-90% to-90%"
+            className="px-4 h-full flex items-center bg-gradient-to-b from-transparent to-transparent hover:to-orange-500 via-transparent via-90% to-90%"
             href={href}
         >
             {children}

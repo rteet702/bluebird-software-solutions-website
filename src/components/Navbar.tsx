@@ -1,27 +1,25 @@
 import Link from "next/link";
 import Navlink from "./Navlink";
-import { useState } from "react";
 
-const Links = [
-    <Navlink href="/about">About Us</Navlink>,
-    <Navlink href="/services">Services</Navlink>,
-    <Navlink href="/contact">Contact Us</Navlink>,
+const LinksTest = [
+    { href: "/about", title: "About Us" },
+    { href: "/services", title: "Services" },
+    { href: "/contact", title: "Contact Us" },
 ];
-
 export default function Navbar() {
     return (
-        <nav className="fixed w-full bg-white shadow flex justify-between items-center h-12">
+        <nav className="fixed w-full bg-neutral-900 shadow-lg flex justify-between items-center h-24 text-slate-50 px-4">
             <Link
                 href="/"
-                className="h-full px-4 py-2 text-2xl bg-gradient-to-b from-white to-orange-500 via-white via-90% to-90%"
+                className="h-full items-center flex px-4 py-2 text-2xl bg-gradient-to-b from-transparent to-transparent hover:to-orange-500 via-transparent via-90% to-90%"
             >
                 Bluebird Software Solutions, LLC
             </Link>
             <div className="flex h-full">
-                {Links.map((link, id) => {
+                {LinksTest.map((link, id) => {
                     return (
-                        <Navlink key={id} href={link.props.href}>
-                            {link.props.children}
+                        <Navlink key={id} href={link.href}>
+                            {link.title}
                         </Navlink>
                     );
                 })}
